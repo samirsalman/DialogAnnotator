@@ -2,12 +2,14 @@ import json
 import sys
 from copy import deepcopy
 import os
+from art import *
 
 args = sys.argv
 path = ""
 full_data = ""
 temp_data = {"beliefs": [], "actions": []}
 last_code = ""
+Art=text2art("Dialog Annotator")
 
 class bcolors:
     HEADER = '\033[95m'
@@ -68,14 +70,15 @@ def choise_belief(options):
     d = deepcopy(options)
     print(f'{bcolors.WARNING}{5 * "*"}  BELIEF RULE {5 * "*"}{bcolors.ENDC}')
     i = input(f'{bcolors.BOLD}If you want edit one of the following values, press Enter if you want confirm{bcolors.ENDC}\n\n'
-              f'text:"{d[0]}"\n'
-              f'[0] user_nlu:"{d[1]}"\n'
-              f'[1] belief:"{d[2]}"\n'
-              f'[2] sys_act:"{d[3]}"\n'
+              f'{bcolors.BOLD}text:"{d[1]}"{bcolors.ENDC}\n'
+              f'{bcolors.BOLD}resp:"{d[0]}"{bcolors.ENDC}\n\n'
+              f'[0] user_nlu:"{d[2]}"\n'
+              f'[1] belief:"{d[3]}"\n'
+              f'[2] sys_act:"{d[4]}"\n'
               f'{20 * "*"}\n')
     if len(i.strip()) > 0:
-        o = input_with_default("Type new value\n\n", d[int(i) + 1])
-        d[int(i) + 1] = o
+        o = input_with_default("Type new value\n\n", d[int(i) + 2])
+        d[int(i) + 2] = o
         return choise_belief(d)
     else:
         return d
@@ -86,17 +89,18 @@ def choise_action(options):
     print(f'{bcolors.WARNING}{5 * "*"}  ACTION RULE {5 * "*"}{bcolors.ENDC}')
 
     i = input(f'{bcolors.BOLD}If you want edit one of the following values, press Enter if you want confirm{bcolors.ENDC}\n\n'
-              f'text:"{d[0]}"\n'
-              f'[0] curr_bs:"{d[1]}"\n'
-              f'[1] user_nlu:"{d[2]}"\n'
-              f'[2] match:"{d[3]}"\n'
-              f'[3] pointer:"{d[4]}"\n'
-              f'[4] out_act:"{d[5]}"\n'
-              f'[5] prev_act:"{d[6]}"\n'
+              f'{bcolors.BOLD}text:"{d[1]}"{bcolors.ENDC}\n'
+              f'{bcolors.BOLD}resp:"{d[0]}"{bcolors.ENDC}\n\n'
+              f'[0] curr_bs:"{d[2]}"\n'
+              f'[1] user_nlu:"{d[3]}"\n'
+              f'[2] match:"{d[4]}"\n'
+              f'[3] pointer:"{d[5]}"\n'
+              f'[4] out_act:"{d[6]}"\n'
+              f'[5] prev_act:"{d[7]}"\n'
               f'{20 * "*"}\n')
     if len(i.strip()) > 0:
-        o = input_with_default("Type new value\n\n", d[int(i) + 1])
-        d[int(i) + 1] = o
+        o = input_with_default("Type new value\n\n", d[int(i) + 2])
+        d[int(i) + 2] = o
         return choise_action(d)
     else:
         return d
@@ -120,9 +124,10 @@ def insert_dialog_code():
             match = turn["match"]
             pointer = turn["pointer"]
             out_act = turn["sys_act"]
+            resp = turn["resp"]
 
-            data_belief = [text, nlu, belief, sys_act]
-            data_action = [text,curr_bs,nlu_act,match,pointer,out_act]
+            data_belief = [resp,text, nlu, belief, sys_act]
+            data_action = [resp,text,curr_bs,nlu_act,match,pointer,out_act]
 
             if d_index == 0:
                 data_belief.append("")
@@ -181,6 +186,8 @@ def ask_continue():
 for index in range(len(args)):
     if args[index] == "-path" or args[index] == "-p":
         path = args[index + 1]
+print(Art)
+print("\n\n\n")
 
 data_file = open(path, "r+")
 full_data = json.load(data_file)
