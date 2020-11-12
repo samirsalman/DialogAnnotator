@@ -93,8 +93,8 @@ def choise_action(options):
               f'{bcolors.BOLD}resp:"{d[0]}"{bcolors.ENDC}\n\n'
               f'[0] curr_bs:"{d[2]}"\n'
               f'[1] user_nlu:"{d[3]}"\n'
-              f'[2] match:"{d[4]}"\n'
-              f'[3] pointer:"{d[5]}"\n'
+              f'[2] pointer:"{d[4]}"\n'
+              f'[3] match:"{d[5]}"\n'
               f'[4] out_act:"{d[6]}"\n'
               f'[5] prev_act:"{d[7]}"\n'
               f'{20 * "*"}\n')
