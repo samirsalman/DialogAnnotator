@@ -24,3 +24,8 @@ After you finish to annotate a dialog, the dialog annotator save rules in ```/an
 ![action](images/2020/11/action.png)
 
 ![end](images/2020/11/end.png)
+
+
+## Author
+
+Samir Salman
