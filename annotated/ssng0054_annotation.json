@@ -1,0 +1,104 @@
+{
+  "beliefs": [
+    {
+      "prev_bs": "",
+      "user_nlu": "[restaurant] [inform] food cuban area east",
+      "prev_act": "[restaurant] [nooffer] [general] [reqmore]",
+      "out_bs": "[restaurant] area east food cuban"
+    },
+    {
+      "prev_bs": "[restaurant] area east food cuban",
+      "user_nlu": "[restaurant] [inform] price moderate area east",
+      "prev_act": "[restaurant] [nooffer] [request] food",
+      "out_bs": "[restaurant] area east food cuban"
+    },
+    {
+      "prev_bs": "[restaurant] area east food cuban",
+      "user_nlu": "[restaurant] [inform] food indian price moderate area east",
+      "prev_act": "[restaurant] [inform] choice name",
+      "out_bs": "[restaurant] area east food indian pricerange moderate"
+    },
+    {
+      "prev_bs": "[restaurant] area east food indian pricerange moderate",
+      "user_nlu": "[restaurant] [inform] name curry prince time 17:30 day monday people 4",
+      "prev_act": "[restaurant] [nobook] [offerbook] name",
+      "out_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30"
+    },
+    {
+      "prev_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30",
+      "user_nlu": "[general] [acceptance]",
+      "prev_act": "[restaurant] [offerbooked] name reference [general] [reqmore]",
+      "out_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30"
+    },
+    {
+      "prev_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30",
+      "user_nlu": "[general] [thank]",
+      "prev_act": "[restaurant] [inform] address phone",
+      "out_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30"
+    },
+    {
+      "prev_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30",
+      "user_nlu": "[restaurant] [request] reference ?",
+      "prev_act": "[general] [bye]",
+      "out_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30"
+    }
+  ],
+  "actions": [
+    {
+      "prev_act": "[general] [welcome]",
+      "curr_bs": "[restaurant] area east food cuban",
+      "user_nlu": "[restaurant] [inform] food cuban area east",
+      "out_act": "0",
+      "pointer": "1,0,0,0,0,0",
+      "match": "[restaurant] [nooffer] [general] [reqmore]"
+    },
+    {
+      "prev_act": "[restaurant] [nooffer] [general] [reqmore]",
+      "curr_bs": "[restaurant] area east food cuban",
+      "user_nlu": "[restaurant] [inform] price moderate area east",
+      "out_act": "0",
+      "pointer": "1,0,0,0,0,0",
+      "match": "[restaurant] [nooffer] [request] food"
+    },
+    {
+      "prev_act": "[restaurant] [nooffer] [request] food",
+      "curr_bs": "[restaurant] area east food indian pricerange moderate",
+      "user_nlu": "[restaurant] [inform] food indian price moderate area east",
+      "out_act": "2",
+      "pointer": "0,0,1,0,0,0",
+      "match": "[restaurant] [inform] choice name"
+    },
+    {
+      "prev_act": "[restaurant] [inform] choice name",
+      "curr_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30",
+      "user_nlu": "[restaurant] [inform] name curry prince time 17:30 day monday people 4",
+      "out_act": "1",
+      "pointer": "0,1,0,0,1,0",
+      "match": "[restaurant] [nobook] [offerbook] name"
+    },
+    {
+      "prev_act": "[restaurant] [nobook] [offerbook] name",
+      "curr_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30",
+      "user_nlu": "[general] [acceptance]",
+      "out_act": "1",
+      "pointer": "0,1,0,0,0,1",
+      "match": "[restaurant] [offerbooked] name reference [general] [reqmore]"
+    },
+    {
+      "prev_act": "[restaurant] [offerbooked] name reference [general] [reqmore]",
+      "curr_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30",
+      "user_nlu": "[general] [thank]",
+      "out_act": "1",
+      "pointer": "0,1,0,0,0,0",
+      "match": "[restaurant] [inform] address phone"
+    },
+    {
+      "prev_act": "[restaurant] [inform] address phone",
+      "curr_bs": "[restaurant] area east day monday food indian name curry prince people 4 pricerange moderate time 17:30",
+      "user_nlu": "[restaurant] [request] reference ?",
+      "out_act": "",
+      "pointer": "0,0,0,0,0,0",
+      "match": "[general] [bye]"
+    }
+  ]
+}

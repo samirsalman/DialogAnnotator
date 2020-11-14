@@ -1,0 +1,132 @@
+{
+  "beliefs": [
+    {
+      "prev_bs": "",
+      "user_nlu": "i am looking to dine out in the centre part of town and i would like to find a place that serves north american food .",
+      "prev_act": "[restaurant] area centre food north american",
+      "out_bs": "[restaurant] [inform] food north american area centre"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] food north american area centre",
+      "user_nlu": "i want to book a table for 5 people at 13:00 on saturday .",
+      "prev_act": "[restaurant] area centre day sunday food north american people 5 time 13:00",
+      "out_bs": "[restaurant] [inform] time 13:00 day sunday people 5"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] time 13:00 day sunday people 5",
+      "user_nlu": "yes . please look for a different place in the same area and price range .",
+      "prev_act": "[restaurant] area centre day sunday food north american people 5 time 13:00",
+      "out_bs": "[general] [alternatives]"
+    },
+    {
+      "prev_bs": "[general] [alternatives]",
+      "user_nlu": "not right now . thank you for your time .",
+      "prev_act": "[restaurant] area centre day sunday food north american people 5 time 13:00",
+      "out_bs": "[general] [thank]"
+    },
+    {
+      "prev_bs": "",
+      "user_nlu": "i am looking for a cheap restaurant in the north part of town .",
+      "prev_act": "[restaurant] area north pricerange cheap",
+      "out_bs": "[restaurant] [inform] price cheap area north"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] food north american area centre",
+      "user_nlu": "i do not have a preference .",
+      "prev_act": "[restaurant] area north food do n't care pricerange cheap",
+      "out_bs": "[restaurant] [inform] food do n't care"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] time 13:00 day sunday people 5",
+      "user_nlu": "da vinci pizzeria serves italian food . it is in the north part of town .",
+      "prev_act": "[restaurant] area north food do n't care pricerange cheap",
+      "out_bs": "[restaurant] [inform] area north"
+    },
+    {
+      "prev_bs": "[general] [alternatives]",
+      "user_nlu": "of course !",
+      "prev_act": "[restaurant] area north food do n't care pricerange cheap",
+      "out_bs": "[general] [acceptance]"
+    },
+    {
+      "prev_bs": "[general] [thank]",
+      "user_nlu": "no , thank you . that is all .",
+      "prev_act": "[restaurant] area north food do n't care pricerange cheap",
+      "out_bs": "[general] [thank]"
+    }
+  ],
+  "actions": [
+    {
+      "prev_act": "[general] [welcome]",
+      "curr_bs": "i am looking to dine out in the centre part of town and i would like to find a place that serves north american food .",
+      "user_nlu": "[restaurant] area centre food north american",
+      "out_act": "[restaurant] [inform] food north american area centre",
+      "pointer": "1",
+      "match": "0,1,0,0,0,0"
+    },
+    {
+      "prev_act": "0,1,0,0,0,0",
+      "curr_bs": "i want to book a table for 5 people at 13:00 on saturday .",
+      "user_nlu": "[restaurant] area centre day sunday food north american people 5 time 13:00",
+      "out_act": "[restaurant] [inform] time 13:00 day sunday people 5",
+      "pointer": "1",
+      "match": "0,1,0,0,1,0"
+    },
+    {
+      "prev_act": "0,1,0,0,1,0",
+      "curr_bs": "yes . please look for a different place in the same area and price range .",
+      "user_nlu": "[restaurant] area centre day sunday food north american people 5 time 13:00",
+      "out_act": "[general] [alternatives]",
+      "pointer": "1",
+      "match": "0,1,0,0,0,0"
+    },
+    {
+      "prev_act": "0,1,0,0,0,0",
+      "curr_bs": "not right now . thank you for your time .",
+      "user_nlu": "[restaurant] area centre day sunday food north american people 5 time 13:00",
+      "out_act": "[general] [thank]",
+      "pointer": "",
+      "match": "0,0,0,0,0,0"
+    },
+    {
+      "prev_act": "[general] [welcome]",
+      "curr_bs": "i am looking for a cheap restaurant in the north part of town .",
+      "user_nlu": "[restaurant] area north pricerange cheap",
+      "out_act": "[restaurant] [inform] price cheap area north",
+      "pointer": "2",
+      "match": "0,0,1,0,0,0"
+    },
+    {
+      "prev_act": "0,1,0,0,0,0",
+      "curr_bs": "i do not have a preference .",
+      "user_nlu": "[restaurant] area north food do n't care pricerange cheap",
+      "out_act": "[restaurant] [inform] food do n't care",
+      "pointer": "2",
+      "match": "0,0,1,0,0,0"
+    },
+    {
+      "prev_act": "0,1,0,0,1,0",
+      "curr_bs": "da vinci pizzeria serves italian food . it is in the north part of town .",
+      "user_nlu": "[restaurant] area north food do n't care pricerange cheap",
+      "out_act": "[restaurant] [inform] area north",
+      "pointer": "",
+      "match": "0,0,0,0,0,0"
+    },
+    {
+      "prev_act": "0,1,0,0,0,0",
+      "curr_bs": "of course !",
+      "user_nlu": "[restaurant] area north food do n't care pricerange cheap",
+      "out_act": "[general] [acceptance]",
+      "pointer": "2",
+      "match": "0,0,1,0,0,0"
+    },
+    {
+      "prev_act": "0,0,0,0,0,0",
+      "curr_bs": "no , thank you . that is all .",
+      "user_nlu": "[restaurant] area north food do n't care pricerange cheap",
+      "out_act": "[general] [thank]",
+      "pointer": "",
+      "match": "0,0,0,0,0,0"
+    }
+  ]
+}

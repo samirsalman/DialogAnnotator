@@ -1,0 +1,244 @@
+{
+  "beliefs": [
+    {
+      "prev_bs": "",
+      "user_nlu": "i am looking for a restaurant .",
+      "prev_act": "",
+      "out_bs": "[restaurant] [inform] none none"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] none none",
+      "user_nlu": "i am looking for unusual food . and i want a place in the centre of town .",
+      "prev_act": "[restaurant] area centre",
+      "out_bs": "[restaurant] [inform] area centre"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] area centre",
+      "user_nlu": "i 'll take something that is cheap .",
+      "prev_act": "[restaurant] area centre pricerange cheap",
+      "out_bs": "[restaurant] [inform] price cheap"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] price cheap",
+      "user_nlu": "do you recommend a restaurant that is a little more different then the rest ?",
+      "prev_act": "[restaurant] area centre pricerange cheap",
+      "out_bs": "[restaurant] [inform] none none"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] none none",
+      "user_nlu": "is that italian ? i would like an italian restaurant , please .",
+      "prev_act": "[restaurant] area centre food italian pricerange cheap",
+      "out_bs": "[restaurant] [inform] food italian"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] food italian",
+      "user_nlu": "okay , that sounds good . i need to make a reservation for 2 people on tuesday .",
+      "prev_act": "[restaurant] area centre food italian name pizza hut city centre pricerange cheap",
+      "out_bs": "[restaurant] [inform] day tuesday people 2"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] day tuesday people 2",
+      "user_nlu": "how about 13:15 ?",
+      "prev_act": "[restaurant] area centre day tuesday food italian name pizza hut city centre people 2 pricerange cheap time 13:15",
+      "out_bs": "[restaurant] [inform] time 13:15"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] time 13:15",
+      "user_nlu": "that is great , thank you .",
+      "prev_act": "[restaurant] area centre day tuesday food italian name pizza hut city centre people 2 pricerange cheap time 13:15",
+      "out_bs": "[general] [thank]"
+    },
+    {
+      "prev_bs": "",
+      "user_nlu": "i am looking for a restaurant in the centre of town serving italian food .",
+      "prev_act": "[restaurant] area centre food italian",
+      "out_bs": "[restaurant] [inform] food italian area centre"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] none none",
+      "user_nlu": "ii'd like a moderate -ly priced place .",
+      "prev_act": "[restaurant] area centre food italian pricerange moderate",
+      "out_bs": "[restaurant] [inform] price moderate"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] area centre",
+      "user_nlu": "that sounds good enough . what is the address there ?",
+      "prev_act": "[restaurant] area centre food italian pricerange moderate",
+      "out_bs": "[restaurant] [request] address ?"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] price cheap",
+      "user_nlu": "no , i just needed to know where it was . thank you .",
+      "prev_act": "[restaurant] area centre food italian pricerange moderate",
+      "out_bs": "[general] [thank]"
+    },
+    {
+      "prev_bs": "",
+      "user_nlu": "i am looking for a place to dine . the restaurant should be in the expensive price range and should be in the centre .",
+      "prev_act": "[restaurant] area centre pricerange expensive",
+      "out_bs": "[restaurant] [inform] price expensive area centre"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] none none",
+      "user_nlu": "yes . i would like greek food please .",
+      "prev_act": "[restaurant] area centre food greek pricerange expensive",
+      "out_bs": "[restaurant] [inform] food greek"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] area centre",
+      "user_nlu": "okay , can you search for british food instead then ?",
+      "prev_act": "[restaurant] area centre food british pricerange expensive",
+      "out_bs": "[restaurant] [inform] food british"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] price cheap",
+      "user_nlu": "that sounds great . could you book a table for 2 people at 15:45 on saturday .",
+      "prev_act": "[restaurant] area centre day saturday food british people 2 pricerange expensive time 15:45",
+      "out_bs": "[restaurant] [inform] time 15:45 day saturday people 2"
+    },
+    {
+      "prev_bs": "[restaurant] [inform] none none",
+      "user_nlu": "thank you that is all i need today .",
+      "prev_act": "[restaurant] area centre day saturday food british people 2 pricerange expensive time 15:45",
+      "out_bs": "[general] [thank]"
+    }
+  ],
+  "actions": [
+    {
+      "prev_act": "[general] [welcome]",
+      "curr_bs": "i am looking for a restaurant .",
+      "user_nlu": "",
+      "out_act": "[restaurant] [inform] none none",
+      "pointer": "",
+      "match": "0,0,0,0,0,0"
+    },
+    {
+      "prev_act": "0,0,0,0,0,0",
+      "curr_bs": "i am looking for unusual food . and i want a place in the centre of town .",
+      "user_nlu": "[restaurant] area centre",
+      "out_act": "[restaurant] [inform] area centre",
+      "pointer": "69",
+      "match": "0,0,0,1,0,0"
+    },
+    {
+      "prev_act": "0,0,0,1,0,0",
+      "curr_bs": "i 'll take something that is cheap .",
+      "user_nlu": "[restaurant] area centre pricerange cheap",
+      "out_act": "[restaurant] [inform] price cheap",
+      "pointer": "15",
+      "match": "0,0,0,1,0,0"
+    },
+    {
+      "prev_act": "0,0,0,1,0,0",
+      "curr_bs": "do you recommend a restaurant that is a little more different then the rest ?",
+      "user_nlu": "[restaurant] area centre pricerange cheap",
+      "out_act": "[restaurant] [inform] none none",
+      "pointer": "15",
+      "match": "0,0,0,1,0,0"
+    },
+    {
+      "prev_act": "0,0,0,1,0,0",
+      "curr_bs": "is that italian ? i would like an italian restaurant , please .",
+      "user_nlu": "[restaurant] area centre food italian pricerange cheap",
+      "out_act": "[restaurant] [inform] food italian",
+      "pointer": "3",
+      "match": "0,0,1,0,0,0"
+    },
+    {
+      "prev_act": "0,0,1,0,0,0",
+      "curr_bs": "okay , that sounds good . i need to make a reservation for 2 people on tuesday .",
+      "user_nlu": "[restaurant] area centre food italian name pizza hut city centre pricerange cheap",
+      "out_act": "[restaurant] [inform] day tuesday people 2",
+      "pointer": "1",
+      "match": "0,1,0,0,0,0"
+    },
+    {
+      "prev_act": "0,1,0,0,0,0",
+      "curr_bs": "how about 13:15 ?",
+      "user_nlu": "[restaurant] area centre day tuesday food italian name pizza hut city centre people 2 pricerange cheap time 13:15",
+      "out_act": "[restaurant] [inform] time 13:15",
+      "pointer": "1",
+      "match": "0,1,0,0,0,1"
+    },
+    {
+      "prev_act": "0,1,0,0,0,1",
+      "curr_bs": "that is great , thank you .",
+      "user_nlu": "[restaurant] area centre day tuesday food italian name pizza hut city centre people 2 pricerange cheap time 13:15",
+      "out_act": "[general] [thank]",
+      "pointer": "",
+      "match": "0,0,0,0,0,0"
+    },
+    {
+      "prev_act": "[general] [welcome]",
+      "curr_bs": "i am looking for a restaurant in the centre of town serving italian food .",
+      "user_nlu": "[restaurant] area centre food italian",
+      "out_act": "[restaurant] [inform] food italian area centre",
+      "pointer": "9",
+      "match": "0,0,0,1,0,0"
+    },
+    {
+      "prev_act": "0,0,0,0,0,0",
+      "curr_bs": "ii'd like a moderate -ly priced place .",
+      "user_nlu": "[restaurant] area centre food italian pricerange moderate",
+      "out_act": "[restaurant] [inform] price moderate",
+      "pointer": "2",
+      "match": "0,0,1,0,0,0"
+    },
+    {
+      "prev_act": "0,0,0,1,0,0",
+      "curr_bs": "that sounds good enough . what is the address there ?",
+      "user_nlu": "[restaurant] area centre food italian pricerange moderate",
+      "out_act": "[restaurant] [request] address ?",
+      "pointer": "2",
+      "match": "0,0,1,0,0,0"
+    },
+    {
+      "prev_act": "0,0,0,1,0,0",
+      "curr_bs": "no , i just needed to know where it was . thank you .",
+      "user_nlu": "[restaurant] area centre food italian pricerange moderate",
+      "out_act": "[general] [thank]",
+      "pointer": "",
+      "match": "0,0,0,0,0,0"
+    },
+    {
+      "prev_act": "[general] [welcome]",
+      "curr_bs": "i am looking for a place to dine . the restaurant should be in the expensive price range and should be in the centre .",
+      "user_nlu": "[restaurant] area centre pricerange expensive",
+      "out_act": "[restaurant] [inform] price expensive area centre",
+      "pointer": "33",
+      "match": "0,0,0,1,0,0"
+    },
+    {
+      "prev_act": "0,0,0,0,0,0",
+      "curr_bs": "yes . i would like greek food please .",
+      "user_nlu": "[restaurant] area centre food greek pricerange expensive",
+      "out_act": "[restaurant] [inform] food greek",
+      "pointer": "0",
+      "match": "1,0,0,0,0,0"
+    },
+    {
+      "prev_act": "0,0,0,1,0,0",
+      "curr_bs": "okay , can you search for british food instead then ?",
+      "user_nlu": "[restaurant] area centre food british pricerange expensive",
+      "out_act": "[restaurant] [inform] food british",
+      "pointer": "3",
+      "match": "0,0,1,0,0,0"
+    },
+    {
+      "prev_act": "0,0,0,1,0,0",
+      "curr_bs": "that sounds great . could you book a table for 2 people at 15:45 on saturday .",
+      "user_nlu": "[restaurant] area centre day saturday food british people 2 pricerange expensive time 15:45",
+      "out_act": "[restaurant] [inform] time 15:45 day saturday people 2",
+      "pointer": "3",
+      "match": "0,0,1,0,0,1"
+    },
+    {
+      "prev_act": "0,0,0,1,0,0",
+      "curr_bs": "thank you that is all i need today .",
+      "user_nlu": "[restaurant] area centre day saturday food british people 2 pricerange expensive time 15:45",
+      "out_act": "[general] [thank]",
+      "pointer": "",
+      "match": "0,0,0,0,0,0"
+    }
+  ]
+}
